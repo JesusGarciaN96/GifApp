@@ -8,7 +8,7 @@ function GifExpertApp() {
 
   return (
     <>
-      <h2>Gif Expert App</h2>
+      <h1 style={{ textAlign: 'center' }}>Giphy Application</h1>
       <AddCategory addCategory={setCategories} />
       <hr />
       {categories.map(cate => (

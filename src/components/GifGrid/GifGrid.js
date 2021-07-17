@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import './GifGrid.css';
@@ -33,14 +33,17 @@ function GifGrid({ category }) {
   }, []);
 
   return (
-    <div className='gif-grid'>
-      {gifCollection.map(gif => (
-        <div className='gif-grid__contenedor' key={gif.id}>
-          <h3 className='gif-grid__titulo'>{gif.title.toUpperCase()}</h3>
-          <img className='gif-grid__gif' src={gif.urlGif} alt={gif.title} />
-        </div>
-      ))}
-    </div>
+    <Fragment className='gif-grid'>
+      <h2 className='gif-grid__title'>{category}</h2>
+      <div className='gif-grid__grid'>
+        {gifCollection.map(gif => (
+          <div className='gif-grid__container' key={gif.id}>
+            <h5 className='gif-grid__gif-title'>{gif.title.toUpperCase()}</h5>
+            <img className='gif-grid__gif' src={gif.urlGif} alt={gif.title} />
+          </div>
+        ))}
+      </div>
+    </Fragment>
   );
 }
 

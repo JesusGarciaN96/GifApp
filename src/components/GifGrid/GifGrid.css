@@ -1,12 +1,24 @@
 .gif-grid {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.gif-grid__title {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.gif-grid__grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
 
-.gif-grid__contenedor {
+.gif-grid__container {
   width: 300px;
   height: 250px;
   border: solid 1px #323334;
@@ -16,12 +28,13 @@
   overflow: hidden;
 }
 
-.gif-grid__titulo {
+.gif-grid__gif-title {
   text-align: center;
 }
 
 .gif-grid__gif {
   max-width: 300px;
   max-height: 230px;
+  display: block;
   margin: 0 auto;
 }
