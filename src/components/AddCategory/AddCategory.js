@@ -11,7 +11,7 @@ function AddCategory({ addCategory }) {
   const handleSubmitCategory = event => {
     event.preventDefault();
     if (category) {
-      addCategory(cat => [...cat, category]);
+      addCategory(cat => [category, ...cat]);
       setCategory('');
     }
   };
