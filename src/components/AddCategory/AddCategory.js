@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './AddCategory.css';
+
 function AddCategory({ addCategory }) {
   const [category, setCategory] = useState('');
 
@@ -15,14 +17,17 @@ function AddCategory({ addCategory }) {
   };
 
   return (
-    <form onSubmit={handleSubmitCategory}>
+    <form className='add-category' onSubmit={handleSubmitCategory}>
       <input
+        className='add-category__search-box'
         type='text'
         value={category}
         onChange={handleChangesCategory}
         placeholder='Agregar Categoria'
       />
-      <button type='submit'>Agregar Categoria</button>
+      <button className='add-category__button' type='submit'>
+        Agregar Categoria
+      </button>
     </form>
   );
 }

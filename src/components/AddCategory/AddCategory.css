@@ -1,0 +1,20 @@
+.add-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.add-category__search-box {
+  width: 90%;
+}
+
+.add-category__button {
+  height: 34px;
+  font-size: 14px;
+  background-color: mediumpurple;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}

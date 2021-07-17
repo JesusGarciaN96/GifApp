@@ -1,0 +1,27 @@
+.gif-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.gif-grid__contenedor {
+  width: 300px;
+  height: 250px;
+  border: solid 1px #323334;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.gif-grid__titulo {
+  text-align: center;
+}
+
+.gif-grid__gif {
+  max-width: 300px;
+  max-height: 230px;
+  margin: 0 auto;
+}
