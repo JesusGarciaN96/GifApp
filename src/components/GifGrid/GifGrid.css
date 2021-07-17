@@ -1,12 +1,14 @@
 .gif-grid {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
 .gif-grid__title {
-  margin-left: 10px;
+  width: 100%;
+  text-align: left;
+  margin-left: 15px;
   margin-bottom: 3px;
 }
 

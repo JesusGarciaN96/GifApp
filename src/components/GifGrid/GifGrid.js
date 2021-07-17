@@ -1,49 +1,28 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
+import { useFetchGifs } from '../../hooks/useFetchGifs';
 
 import './GifGrid.css';
 
 function GifGrid({ category }) {
-  const [gifCollection, setGifCollection] = useState([]);
-  const apiKey = 'BQhSthjbP9NOXgxUL6W5PsjbtuKfXEa8';
-
-  const getGifs = async () => {
-    if (category) {
-      try {
-        const { data } = await (
-          await fetch(
-            `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${category}&limit=10`
-          )
-        ).json();
-
-        const collection = data.map(({ id, title, images }) => ({
-          id,
-          title,
-          urlGif: images.downsized.url,
-        }));
-        setGifCollection(collection);
-      } catch (ex) {
-        console.log(ex);
-      }
-    }
-  };
-
-  useEffect(() => {
-    getGifs();
-  }, []);
+  const { data, loading } = useFetchGifs(category);
 
   return (
-    <Fragment className='gif-grid'>
-      <h2 className='gif-grid__title'>{category}</h2>
-      <div className='gif-grid__grid'>
-        {gifCollection.map(gif => (
-          <div className='gif-grid__container' key={gif.id}>
-            <h5 className='gif-grid__gif-title'>{gif.title.toUpperCase()}</h5>
-            <img className='gif-grid__gif' src={gif.urlGif} alt={gif.title} />
-          </div>
-        ))}
+    <>
+      {loading && <h2>Cargando Imágenes...</h2>}
+      <div className='gif-grid animate__animated animate__slideInUp'>
+        <h2 className='gif-grid__title'>{category}</h2>
+        <div className='gif-grid__grid'>
+          {data.map(gif => (
+            <div className='gif-grid__container' key={gif.id}>
+              <h5 className='gif-grid__gif-title'>{gif.title.toUpperCase()}</h5>
+              <img className='gif-grid__gif' src={gif.urlGif} alt={gif.title} />
+            </div>
+          ))}
+        </div>
       </div>
-    </Fragment>
+    </>
   );
 }
 
