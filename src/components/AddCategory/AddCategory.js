@@ -17,18 +17,21 @@ function AddCategory({ addCategory }) {
   };
 
   return (
-    <form className='add-category' onSubmit={handleSubmitCategory}>
-      <input
-        className='add-category__search-box'
-        type='text'
-        value={category}
-        onChange={handleChangesCategory}
-        placeholder='Agregar Categoria'
-      />
-      <button className='add-category__button' type='submit'>
-        Agregar Categoria
-      </button>
-    </form>
+    <>
+      <form className='add-category' onSubmit={handleSubmitCategory}>
+        <input
+          className='add-category__search-box'
+          type='text'
+          value={category}
+          onChange={handleChangesCategory}
+          placeholder='Agregar Categoria'
+        />
+        <button className='add-category__button' type='submit'>
+          Agregar Categoria
+        </button>
+      </form>
+      <p className='add-category__test-paragraph'>{category}</p>
+    </>
   );
 }
 

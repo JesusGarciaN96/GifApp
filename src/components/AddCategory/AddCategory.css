@@ -8,6 +8,10 @@
   width: 90%;
 }
 
+.add-category__test-paragraph {
+  display: none;
+}
+
 .add-category__button {
   height: 34px;
   font-size: 14px;
