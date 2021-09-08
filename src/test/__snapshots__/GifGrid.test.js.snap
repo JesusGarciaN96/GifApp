@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing de componentes con Enzyme Debe mostrar (renderizar) <GifGrid /> de manera correcta 1`] = `
+<Fragment>
+  <h2>
+    Cargando Imágenes...
+  </h2>
+  <div
+    className="gif-grid animate__animated animate__slideInUp"
+  >
+    <h2
+      className="gif-grid__title"
+    >
+      One Punch Man
+    </h2>
+    <div
+      className="gif-grid__grid"
+    />
+  </div>
+</Fragment>
+`;
