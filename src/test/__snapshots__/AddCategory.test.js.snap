@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas unitarias para componente AddCategory Render del componente 1`] = `
+<form
+  className="add-category"
+  onSubmit={[Function]}
+>
+  <input
+    className="add-category__search-box"
+    onChange={[Function]}
+    placeholder="Agregar Categoria"
+    type="text"
+    value=""
+  />
+  <button
+    className="add-category__button"
+    type="submit"
+  >
+    Agregar Categoria
+  </button>
+</form>
+`;
