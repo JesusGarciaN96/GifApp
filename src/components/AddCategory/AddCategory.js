@@ -27,7 +27,7 @@ function AddCategory({ addCategory }) {
           placeholder='Agregar Categoria'
         />
         <button className='add-category__button' type='submit'>
-          Agregar Categoria
+          Agregar Categorias
         </button>
       </form>
       <p className='add-category__test-paragraph'>{category}</p>

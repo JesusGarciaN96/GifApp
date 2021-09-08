@@ -17,7 +17,7 @@ exports[`Pruebas unitarias para componente AddCategory Render del componente 1`]
       className="add-category__button"
       type="submit"
     >
-      Agregar Categoria
+      Agregar Categorias
     </button>
   </form>
   <p

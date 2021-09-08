@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import '@testing-library/jest-dom';
 
 import AddCategory from '../components/AddCategory/AddCategory';
 
@@ -9,7 +10,16 @@ describe('Pruebas unitarias para componente AddCategory', () => {
     'Dragon Ball Super',
     'Pokemon',
   ];
-  const wrapper = shallow(<AddCategory addCategory={agregarCategoria} />);
+  let wrapper;
+  const setCategorias = jest.fn();
+
+  beforeEach(() => {
+    // Antes de ejecutar las test se debe limpiar cualquier mock que
+    // pueda existir (valor por defecto para hacer test) y reiniciamos
+    // el componente antes de ejecutar las pruebas
+    jest.clearAllMocks();
+    wrapper = shallow(<AddCategory addCategory={agregarCategoria} />);
+  });
 
   test('Render del componente', () => {
     expect(wrapper).toMatchSnapshot();
@@ -27,5 +37,13 @@ describe('Pruebas unitarias para componente AddCategory', () => {
     });
     const textoBusqueda = wrapper.find('p').text().trim();
     expect(textoBusqueda).toBe(valorSimulacion);
+  });
+
+  test('No se debe ejecutar el evento submit', () => {
+    const formularioGif = wrapper.find('form');
+    formularioGif.simulate('submit', {
+      preventDefault() {},
+    });
+    expect(setCategorias).not.toHaveBeenCalled();
   });
 });
