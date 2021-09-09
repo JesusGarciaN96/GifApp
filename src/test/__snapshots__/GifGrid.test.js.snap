@@ -19,3 +19,36 @@ exports[`Testing de componentes con Enzyme Debe mostrar (renderizar) <GifGrid />
   </div>
 </Fragment>
 `;
+
+exports[`Testing de componentes con Enzyme Debe mostrar items cuando se carga el componente 1`] = `
+<Fragment>
+  <div
+    className="gif-grid animate__animated animate__slideInUp"
+  >
+    <h2
+      className="gif-grid__title"
+    >
+      One Punch Man
+    </h2>
+    <div
+      className="gif-grid__grid"
+    >
+      <div
+        className="gif-grid__container"
+        key="1"
+      >
+        <h5
+          className="gif-grid__gif-title"
+        >
+          SAITAMA
+        </h5>
+        <img
+          alt="Saitama"
+          className="gif-grid__gif"
+          src="https://localhost/some/saitama.png"
+        />
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;
