@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test de la vista de gifs El render de la vista debe mostrarse 1`] = `
+<Fragment>
+  <h1
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Giphy Application
+  </h1>
+  <AddCategory
+    addCategory={[Function]}
+  />
+  <hr />
+</Fragment>
+`;

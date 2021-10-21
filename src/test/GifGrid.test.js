@@ -55,7 +55,6 @@ describe('Testing de componentes con Enzyme', () => {
       loading: false,
     });
     const wrapper = shallow(<GifGrid category={categoria} />);
-    console.log(wrapper.find('img').at(0));
   });
 
   // Llama el hook de fetch y usa un mock para simular que si respondio
@@ -73,6 +72,9 @@ describe('Testing de componentes con Enzyme', () => {
       loading: false,
     });
     const componente = shallow(<GifGrid category={categoria} />);
+
     expect(componente).toMatchSnapshot();
+    expect(componente.find('p').exists()).toBe(false); // Revisamos que el texto de loading no se muestra
+    expect(componente.find('.gif-grid__container').exists()).toBe(true); // Revisamos si existe el contenedor del item
   });
 });
